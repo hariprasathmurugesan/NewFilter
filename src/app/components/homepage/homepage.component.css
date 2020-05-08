@@ -1,0 +1,40 @@
+.fun{
+    width: 100%;
+    margin-bottom: 2 rem;
+  }
+
+  .formpaddingdel {
+    margin-top: 12px;
+  }
+
+  .padding {
+    padding-bottom: 2rem;
+  }
+  
+  .formpadding{
+    padding-top: 2 rem;
+    margin-bottom: 2 rem;
+    margin-top: 10px;
+  }
+
+  .tablepadding {
+    padding-top: 50px;
+  }
+
+  .headingmain {
+    font-size: 0.3in;
+    font-weight: 500;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .paddingbtn {
+    padding-top: 20px;
+    padding-right: 70px;
+  }
+
+  .paddingbtn2 {
+    margin-top: 20px;
+    margin-right: 20px;
+  }

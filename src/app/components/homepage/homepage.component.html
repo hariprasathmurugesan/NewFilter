@@ -1,0 +1,82 @@
+
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="headingmain">Employee Database - Advanced Search</li>
+          <li class="ml-auto paddingbtn"><button class="btn btn-lg btn-success" (click)="addFilter()">
+            <i class="fas fa-plus fa-xs"></i> Add Filter</button></li>
+          <li><button class="btn btn-lg btn-primary paddingbtn2" (click)="advSearch()" data-toggle="modal" data-target="#myModal">
+           <i class="fas fa-sync fa-xs"></i> Update</button></li>
+        </ol>
+      </nav>
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+      
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Filter conditions to Backend Service Call</h4>
+            </div>
+            <div class="modal-body" *ngFor="let k of outputSer; let y = index" [attr.data-index]="y">
+              <p>{{outputSer[y]}}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+
+    <div class="container" *ngFor="let m of filterCount; let i = index" [attr.data-index]="i">
+    <div class="row">
+        <div class="col-md-2 formpadding">
+            <select class="form-control" id="var{{filterCount[i]}}">
+                <option>Name</option>
+                <option>Age</option>
+                <option>Salary</option>
+              </select>
+        </div>
+        <div class="col-md-2 formpadding">
+            <select class="form-control" id="cond{{filterCount[i]}}">
+                <option>Starts With</option>
+                <option>Greater Than</option>
+                <option>Less Than</option>
+                <option>Equal to</option>
+              </select>
+        </div>
+        <div class="col-md-6 formpadding"> 
+            <input type="text" id="srch{{filterCount[i]}}" class="form-control" placeholder="Enter value here...">
+        </div>
+        <div class="col-md-1 formpadding" id="del{{filterCount[i]}}">
+            <button class="btn btn-danger btn-sm rounded-0" type="button"
+            data-toggle="tooltip" data-placement="top" title="Delete" (click)="onDelete(m)">
+            <i class="fa fa-trash"></i></button>
+        </div>
+    </div>
+</div>
+
+<br>
+
+
+<table class="table table-hover">
+    <caption>CVS Employee Database</caption>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">NAME</th>
+        <th scope="col">AGE</th>
+        <th scope="col">SALARY</th>
+      </tr>
+    </thead>
+    <tbody *ngFor= "let p of members">
+      <tr>
+        <th scope="row">{{p.id}}</th>
+        <td>{{p.name | titlecase}}</td>
+        <td>{{p.age}}</td>
+        <td>{{p.salary}}</td>
+      </tr>
+    </tbody>
+  </table>
+
